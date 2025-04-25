@@ -31,7 +31,7 @@ int main(){
 		switch(choice){
 			case 1:{
 				inputMhs(cap);
-				cap++; 				// i + 1 agar input mahasiswa selanjutnya diisi di indes selanjutnya
+				cap++; 				// cap + 1 agar input mahasiswa selanjutnya diisi di indeks selanjutnya
 				break;}
 			case 2:{
 				string nama;
