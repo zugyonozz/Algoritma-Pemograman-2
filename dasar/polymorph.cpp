@@ -1,32 +1,59 @@
 #include <iostream>
 using namespace std ;
 
-class MathFunc {
-public:
-	double sum(double* n, int len) {
-		double sum = 0;
-		for (size_t i = 0; i < len; ++i) {
-			sum += n[i];
-		}
-		return sum;
-	}
-};
+// induk Kelas
+// class Orang tanpa job
+class Person {
+protected :
+	// deklarasi variabel name
+	string name ;
+public :
+	// constructor
+	Person(string name) : name(name) {}
 
-class Integral : public MathFunc {
-public:
-	int sum(const int* n, int len) {
-		double sum = 0;
-		for (size_t i = 0; i < len; ++i) {
-			sum += n[i];
-		}
-		return sum;
+	// print semua atribut Person
+	virtual void print() {
+		cout << "Nama\t\t: " << this->name << "\n" ;
+	}
+} ;
+
+// turunan Kelas Person
+// class Fisherman job mancing
+class Fisherman : public Person {
+private :
+	// deklarasi variabel tool
+	string tool ;
+public :
+	// Constructor
+	Fisherman(string name, string tool) : Person(name), tool(tool) {}
+
+	// print semua atribut Fisherman
+	void print() override {
+		Person::print() ;
+		cout << "Alat\t\t: " << this->tool << "\n" ;
+	}
+} ;
+
+// turunan Kelas Person
+// class Singer job Penyanyi
+class Singer : public Person {
+private :
+	// deklarasi variabel level oktaf
+	int octafLv ;
+public :
+	// Constructor
+	Singer(string name, int octafLv) : Person(name), octafLv(octafLv) {}
+
+	// print semua atribut Fisherman
+	void print() override {
+		Person::print() ;
+		cout << "Level Oktaf\t: " << this->octafLv << "\n" ;
 	}
 } ;
 
 int main() {
-	Integral i ;
-	int n[5] = {1, 2, 3, 4, 5};
-	cout << i.sum(n, 5) << endl;
-	double d[5] = {1.5, 2, 3, 4, 5};
-	cout << i.MathFunc::sum(d, 5) << endl;
+	Singer MaudyAyunda("Maudy Ayunda", 8) ;
+	MaudyAyunda.print() ;
+	Fisherman zuu("zuu", "Jaring") ;
+	zuu.print() ;
 }

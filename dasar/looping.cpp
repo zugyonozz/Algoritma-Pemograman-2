@@ -6,12 +6,19 @@ int main(){
 
 	// segitiga 1
 	cout << "---------------------------------------\n";
-	for(int i = 0; i < 5; i++){ // ---------------------> kolom
-		for(int j = 0; j <= i; j++){ // ----------------> baris jumlah baris meningkat seiring bertambahnya 'int i'
+
+	// kolom
+	for(int i = 0; i < 5; i++){
+
+		// baris jumlah baris meningkat seiring bertambahnya 'int i'
+		for(int j = 0; j <= i; j++){ 
 			cout << "* ";
 		}
-		cout << endl; // -------------------------------> buat baris baru agar deretan bintang selanjutnya di buat di baris selanjutnya
+
+		// buat baris baru agar deretan bintang selanjutnya di buat di baris selanjutnya
+		cout << endl; 
 	}
+
 	// segitiga 2
 	cout << "---------------------------------------\n";
 	for(int i = 5; i > 0; i--){
@@ -20,24 +27,34 @@ int main(){
 		}
 		cout << endl;
 	}
+
 	// segitiga 3
 	cout << "---------------------------------------\n";
 	for(int i = 0; i < 5; i++){
-		for(int j = 0; j < i; j++){ // -----------------> jumlah spasi bertambah seiring bertambahnya 'int i'
+	
+		// jumlah spasi bertambah seiring bertambahnya 'int i'
+		for(int j = 0; j < i; j++){ 
 			cout << "  ";
+	
 		}
-		for(int k = 5; k > i; k--){ // -----------------> jumlah bintang berkurang seiring bertambahnya 'int i'
+		// jumlah bintang berkurang seiring bertambahnya 'int i'
+		for(int k = 5; k > i; k--){
 			cout << "* ";
 		}
 		cout << endl;
 	}
+	
 	// segitiga 4
 	cout << "---------------------------------------\n";
 	for(int i = 0; i < 5; i++){
-		for(int j = 5; j > i+1; j--){ // -----------------> jumlah spasi berkurang seiring bertambahnya 'int i'
+
+		// jumlah spasi berkurang seiring bertambahnya 'int i'
+		for(int j = 5; j > i+1; j--){ 
 			cout << "  ";
 		}
-		for(int k = 0; k < i+1; k++){ // -----------------> jumlah bintang bertambah seiring bertambahnya 'int i'
+
+		// jumlah bintang bertambah seiring bertambahnya 'int i'
+		for(int k = 0; k < i+1; k++){ 
 			cout << "* ";
 		}
 		cout << endl;

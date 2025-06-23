@@ -4,28 +4,38 @@ using namespace std ;
 // membuat tipe class Event berdasarkan tanggal
 class Event {
 private: // private access
-	string EventDesc ; // deskripsi acara
+	// deskripsi acara
+	string eventDesc ;
+	// tanggal
+	int d ;
+	// bulan
+	int m ;
+	// tahun
+	int y ;
+
 public: // public access
-	int d ; // tanggal
-	int m ; // bulan
-	int y ; // tahun
-	Event() : d(0), m(0), y(0), EventDesc("NONE") {} // Constructor kosong
-	Event(int date, int month, int year, string EventDesc) // Constructor lengkap
-	 : d(date), m(month), y(year), EventDesc(EventDesc) {}
+	// Constructor kosong
+	Event() : d(0), m(0), y(0), eventDesc("NONE") {}
+
+	// Constructor lengkap
+	Event(int date, int month, int year, string eventDesc) : d(date), m(month), y(year), eventDesc(eventDesc) {}
+
 	// atur, edit event
-	Event& setEvent(string EventDesc) { // function atau method dengan return type pointer(alamat) dari class event
-		this->EventDesc = EventDesc ;
-		return *this ; // me-return type Event yang merujuk ke dirinya sendiri
-	}
-	string getEventDesc() { // ambil data Event
-		return this->EventDesc ;
-	}
-	void getEventDetails() { // cetak semua atribut event
-		cout << d << "/" << m << "/" << y << " - " << EventDesc << "\n" ;
+	// function atau method dengan return type pointer(alamat) dari class event
+	void setEvent(string eventDesc) {  this->eventDesc = eventDesc ; }
+
+	// ambil data Event
+	// return type adalah string
+	string getEventDesc() { return this->eventDesc ; }
+
+	// geteventDetails adalah fungsi yang mencetak semua atribut event
+	void geteventDetails() {
+		cout << d << "/"<< m << "/"<< y << " - " << eventDesc << "\n" ;
 	}
 } ;
 
 int main() {
+	// syntax : type_class nama_object argument_constructor
 	Event timeline[5] = {
 		{5, 5, 2025, "Mengaji"} ,
 		{6, 6, 2025, "Menyapu"} ,
@@ -34,8 +44,8 @@ int main() {
 		{9, 9, 2025, "Mengelap"} ,
 	} ;
 	for(int i = 0; i < 5; i++) {
-		timeline[i].getEventDetails() ;
+		// panggil fungsi getEventDetails secara iteratif
+		timeline[i].geteventDetails() ;
 	}
-
 	return 0 ;
 }

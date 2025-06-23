@@ -1,24 +1,29 @@
 #include <iostream>
 using namespace std ;
 
-class Electronics { // membuat tipe class barang elektronik
+// membuat tipe class barang elektronik
+class Electronics { 
 public: // public access
-	static string ClassName() { // fungsi static yang dimana fungsi dapat dipanggil tanpa perlu membuat objek class
+// fungsi static yang dimana fungsi dapat dipanggil tanpa perlu membuat objek class
+	static string ClassName() { 
 		return "Electronic" ;
 	}
 } ;
 
-class Smartphone : public Electronics { // class type Samrtphone adalah turunan dari class Electronic
+// class type Samrtphone adalah turunan dari class Electronic
+class Smartphone : public Electronics { 
 public : // public access
 	void print() {
-		cout << "[" << ClassName() << "] ini Smartphone "; // fungsi ClassName diturunkan dari kelas induk
+		// fungsi ClassName diturunkan dari kelas induk
+		cout << "[" << ClassName() << "] ini Smartphone "; 
 	}
 } ;
-
 
 int main() {
 	// mencetak type kelas Electronic tanpa membuat objek dengan tipe class elektronics
 	cout << Electronics::ClassName() << "\n" ;
-	Smartphone Lenovo; // membuat objek dengan tipe kelas Smartphone
-	Lenovo.print(); // memanggil fungsi print di dalam objek lenovo
+	// membuat objek dengan tipe kelas Smartphone
+	Smartphone Lenovo; 
+	// memanggil fungsi print di dalam objek `Lenovo`
+	Lenovo.print(); 
 }
